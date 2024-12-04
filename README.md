@@ -215,9 +215,3 @@ Four distinct zones:
 
 ### Conclusions
 This project successfully demonstrates the practical application of graph theory and algorithms in law enforcement logistics. The implementation shows how computer science concepts can be applied to real-world problems, particularly in emergency response optimization. While the current system has limitations, its modular design provides a solid foundation for future enhancements such as real-time data integration and more sophisticated traffic modeling.
-
-## Contributing
-Contributions to this project are welcome! Please feel free to submit a Pull Request.
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
