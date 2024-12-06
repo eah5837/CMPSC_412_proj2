@@ -59,7 +59,7 @@ If you prefer using the notebook interface:
 
   class Vertex:
     - id: Unique identifier
-    - x, y: Coordinate positions
+    - x, y: Coordinate positions for graph
     - edges: Dictionary of connected vertices
 
 - **Edge Class**
@@ -75,7 +75,7 @@ If you prefer using the notebook interface:
 
   class Graph:
     - vertices: Dictionary of all vertices
-    Methods:
+    Functions:
     - add_vertex(): Add new location point
     - add_edge(): Connect two locations
     - dijkstra(): Find shortest path
@@ -88,7 +88,7 @@ If you prefer using the notebook interface:
   class PoliceDispatchSystem:
     - graph: Reference to city graph
     - cops: Dictionary of cop locations
-    Methods:
+    Functions:
     - add_cop(): Assign cop to location
     - remove_cop(): Remove cop from duty
     - find_nearest_cop(): Locate closest officer
@@ -97,28 +97,30 @@ If you prefer using the notebook interface:
 ### 2. Main Functions
 
 #### A. Graph Creation and Setup
-- `create_map()`: Initializes the complete city graph with:
-  - Downtown Core (nodes 0-5)
-  - Inner Residential (nodes 6-13)
-  - Outer Residential (nodes 14-21)
-  - Commercial/Industrial Areas (nodes 22-29)
+- **create_map()**: Initializes the complete city graph with:
+  - Various vertices color-coded to represent parts of the city:
+       - Downtown Core (vertices 0-5)
+       - Inner Residential (vertices 6-13)
+       - Outer Residential (vertices 14-21)
+       - Commercial/Industrial Areas (vertices 22-29)
+  - Several edges to connect vertices together
 
 #### B. Visualization Functions
-- `visualize_graph()`: Displays graph with:
+- **visualize_graph()**: Displays graph with:
   - Color-coded regions
   - Edge weights
   - Traffic conditions
   - Optional path highlighting
 
 #### C. User Interface Functions
-- `main_menu()`: Interactive system with options:
+- **main_menu()**: Interactive system with options to:
   1. Display Current Map
   2. Assign Cop to Location
   3. Remove Cop from Duty
   4. Report Crime
   5. Add New Location
   6. List All Cops and Locations
-  7. Exit
+  7. Exit Program
 
 ### 3. Algorithm Implementation
 
@@ -138,8 +140,8 @@ If you prefer using the notebook interface:
 #### A. Traffic Conditions
 Three levels of traffic weight:
 - Light traffic: 5-8 minutes
-- Normal traffic: 8-15 minutes
-- Rush hour: 18-30 minutes
+- Normal traffic: 9-15 minutes
+- Rush hour: 16-30 minutes
 
 #### B. Area Classification
 Four distinct zones:
@@ -151,9 +153,9 @@ Four distinct zones:
 ## Functionalities and Test Results
 
 ### Functionalities
-1. Dual Graph Creation:
-   - Crime graph models locations of crimes
-   - Cops graph models police stations and their reachable paths
+1. Multi Weight Edges:
+   - Paths between vertices change depending on time
+   - Algorithm has to rethink paths depending on how much traffic there is
 
 2. Dynamic Input:
    - Nodes and edges can be added dynamically to customize scenarios
@@ -166,13 +168,19 @@ Four distinct zones:
 4. Graph Visualization:
    - Color-coded region display
    - Interactive map interface
-   - Path highlighting capabilities
+   - Path highlighting
 
 ### Test Results
 - Successfully created and visualized multi-region city graph
-- Demonstrated accurate path finding with different traffic conditions
-- Verified police dispatch functionality with multiple units
+  ![Initial Graph](Images/Initial_Graph.png)
+- Verified police dispatch functionality
+  ![Adding a Cop](Images/Adding_Cop.png)
+  ![Display Cops](Images/Display_Cops.png)
+  - Demonstrated accurate path finding with different traffic conditions
+  ![Police Path](Images/Police_Path.png)
 - Confirmed dynamic vertex and edge addition capabilities
+  ![Added Vertex](Images/Add_Vertex.png)
+
 
 ## Showcasing the Achievement of Project Goals
 
@@ -200,18 +208,7 @@ Four distinct zones:
 
 ### Discussion
 
-#### Strengths
-- Comprehensive graph-based city modeling
-- Efficient pathfinding with traffic consideration
-- Flexible and expandable system architecture
-- Interactive user interface
-- Robust police unit management
-
-#### Limitations
-- Static traffic condition representation
-- Limited to predefined area types
-- No real-time data integration
-- Basic visualization capabilities
+The Police Route Finder demonstrates practical applications of computer science fundamentals through graph theory and Dijkstra's algorithm implementation for emergency response optimization. While successfully utilizing Dijkstra, limitations in static traffic conditions highlight the balance between theoretical models and real-world complexity. Despite these constraints, the project effectively achieves route optimization and providing valuable experience in algorithm implementation while illustrating how core computer science concepts can solve complex logistical challenges.
 
 ### Conclusions
 This project successfully demonstrates the practical application of graph theory and algorithms in law enforcement logistics. The implementation shows how computer science concepts can be applied to real-world problems, particularly in emergency response optimization. While the current system has limitations, its modular design provides a solid foundation for future enhancements such as real-time data integration and more sophisticated traffic modeling.
