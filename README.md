@@ -34,7 +34,7 @@ Efficient crime response is crucial for community safety and trust in law enforc
 2. Install the required libraries by executing the following command:
    pip install matplotlib networkx jupyter
 3. Clone the repository:
-   git clone [<repository_link>](https://github.com/eah5837/CMPSC_463_proj2)
+   git clone https://github.com/eah5837/CMPSC_463_proj2
 4. Change drive using cd CMPSC_463_Proj2
 5. Convert the Jupyter notebook to a Python script:
    jupyter nbconvert --to script Police_Route_Finder.ipynb
